@@ -9,7 +9,7 @@ export const Header = () => {
    const handleLogout = async() => {
     await dispatch(logout())
 }
-    const {isLoggedIn} = useAuth()
+    const {isLoggedIn} = useAuth() 
     return <><MainNav/>
     {!isLoggedIn && <AuthNav/> }
    {isLoggedIn && <button onClick = {handleLogout} type="button">logout</button>}

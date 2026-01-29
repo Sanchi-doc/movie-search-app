@@ -11,6 +11,7 @@ import {
     REGISTER,
   } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'
+import { filmsApi } from "./films/filmOperations";
 
 const authPersistConfig = {
     key: 'auth',
@@ -20,7 +21,8 @@ const authPersistConfig = {
 export const store = configureStore({
 
     reducer: {
-        [authSlice.name]: persistReducer(authPersistConfig, authSlice.reducer)
+        [authSlice.name]: persistReducer(authPersistConfig, authSlice.reducer),
+        [filmsApi.reducerPath]: filmsApi.reducer
     },
     middleware: getDefaultMiddleware => [
         ...getDefaultMiddleware({
@@ -28,6 +30,7 @@ export const store = configureStore({
             ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
           },
         }),
+        filmsApi.middleware
 ]})
 
 export const persister = persistStore(store)
