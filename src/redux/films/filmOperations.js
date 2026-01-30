@@ -49,7 +49,43 @@ export const filmsApi = createApi({
           }},
           providesTags:['films']
       }),
-      
+      getReviewByID: builder.query({
+        query: (id) => {
+          const searchParams = new URLSearchParams({
+            api_key: '3b597bca23ceb7f8807c56bd094cb646',
+          })
+          return {
+           method: 'GET',
+           url: `https://api.themoviedb.org/3/movie/${id}/reviews?${searchParams}`
+          }},
+          providesTags:['films']
+      }),
+      getReviewNameByID: builder.query({
+        query: (name, page) => {
+          const searchParams = new URLSearchParams({
+            api_key: '3b597bca23ceb7f8807c56bd094cb646',
+            language: 'en-US',
+            query: name,
+            page,
+            include_adult: false,
+          });
+          return {
+           method: 'GET',
+           url: `https://api.themoviedb.org/3/search/movie?${searchParams}`
+          }},
+          providesTags:['films']
+      }),
+      getReviewVideoByID: builder.query({
+        query: (id) => {
+          const searchParams = new URLSearchParams({
+            api_key: '3b597bca23ceb7f8807c56bd094cb646',
+          })
+          return {
+           method: 'GET',
+           url: `https://api.themoviedb.org/3/movie/${id}/videos?${searchParams}`
+          }},
+          providesTags:['films']
+      }),
     })
 })
-export const {useGetPopularMovieQuery, useGetMovieByIDQuery, useGetCastByIDQuery} = filmsApi
+export const {useGetPopularMovieQuery, useGetMovieByIDQuery, useGetCastByIDQuery, useGetReviewByIDQuery, useGetReviewNameByIDQuery, useGetReviewVideoByIDQuery} = filmsApi
