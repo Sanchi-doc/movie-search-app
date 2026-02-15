@@ -1,12 +1,15 @@
-[{
+[
+  {
     "id": "1",
     "href": "/login",
-    "text": "Login"
+    "text": "Login",
+    "icon": "login" 
   },
   
   {
-      "id": "2",
-      "href": "/register",
-      "text": "Register"
+    "id": "2",
+    "href": "/register",
+    "text": "Register",
+    "icon": "register"
   }
 ]

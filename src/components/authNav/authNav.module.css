@@ -1,0 +1,21 @@
+.list {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow:
+    1px 1px 0 #000,
+    2px 2px 5px rgba(0,0,0,0.3),
+    0 0 10px rgba(255,140,0,0.7);
+}
+
+.text { 
+    margin: 10px
+}

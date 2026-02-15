@@ -1,0 +1,38 @@
+.main {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.img {
+  border-radius: 16px
+}
+
+.text {
+    margin-left: 20px;
+    text-align: center;
+}
+
+.genres {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.genresList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.genresListItem {
+    margin-left: 10px;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px
+}

@@ -2,16 +2,19 @@
 {
     "id": "3",
     "href": "/movie",
-    "text": "Movie"
+    "text": "Movie",
+    "icon":"movie"
 },
 {
     "id": "4",
     "href": "/favorites",
-    "text": "Favorites"
+    "text": "Favorites",
+    "icon":"heart"
 },
 {
     "id": "6",
     "href": "/",
-    "text": "Home"
+    "text": "Home",
+    "icon": "home"
 }
 ]

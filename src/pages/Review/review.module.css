@@ -1,0 +1,7 @@
+.list{
+   padding: 16px
+}
+
+.listItem {
+    border-bottom: 1px solid blueviolet;
+}
