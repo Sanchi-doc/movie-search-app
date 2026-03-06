@@ -1,0 +1,35 @@
+.form { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.btn {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    right: -7px;
+    top: 1px;
+
+}
+
+.position { 
+    position: relative;
+    
+}
+
+.input {
+    border-radius: 16px;
+    width: 300px;
+    height: 30px;
+    padding: 2px;
+    padding-right: 20px;
+    outline: none;
+    font-size: 20px;
+    border: 1px solid whitesmoke;
+    padding-left: 20px;
+}

@@ -2,10 +2,10 @@ import { MovieList } from "../../components/MovieList/MovieList"
 import { useGetPopularMovieQuery } from "../../redux/films/filmOperations"
 export const Home = () => {
     const {data} = useGetPopularMovieQuery(1)
+    console.log(data);
+    
     return <>
-    <nav>
       <MovieList data={data}/>
-    </nav>
     </>
     
 }

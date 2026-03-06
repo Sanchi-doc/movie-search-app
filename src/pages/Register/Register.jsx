@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { register } from "../../redux/auth/authOperation"
+import styles from './register.module.css'
 // import { useEffect } from "react"
 
 export const Register = () => {
@@ -43,10 +44,10 @@ export const Register = () => {
         
     }
     return <>
-    <form onSubmit={handleSubmit}>
-    <input type='text' name = 'name' value = {name} onChange={handleInputChange}/>
-    <input type='text' name = 'email' value = {email} onChange={handleInputChange}/>
-    <input type='text' name = 'password' value = {password} onChange={handleInputChange}/>
+    <form className={styles.form} onSubmit={handleSubmit}>
+    <input className={styles.input} type='text' name = 'name' value = {name} onChange={handleInputChange} placeholder="name"/>
+    <input className={styles.input} type='text' name = 'email' value = {email} onChange={handleInputChange} placeholder="email"/>
+    <input className={styles.input} type='text' name = 'password' value = {password} onChange={handleInputChange} placeholder="password"/>
     <button type='submit'>
         register
     </button>

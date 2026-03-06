@@ -12,6 +12,7 @@ import {
   } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'
 import { filmsApi } from "./films/filmOperations";
+import {favoritesApi} from './films/favoriteOperations'
 
 const authPersistConfig = {
     key: 'auth',
@@ -22,7 +23,8 @@ export const store = configureStore({
 
     reducer: {
         [authSlice.name]: persistReducer(authPersistConfig, authSlice.reducer),
-        [filmsApi.reducerPath]: filmsApi.reducer
+        [filmsApi.reducerPath]: filmsApi.reducer,
+        [favoritesApi.reducerPath]: favoritesApi.reducer
     },
     middleware: getDefaultMiddleware => [
         ...getDefaultMiddleware({
@@ -30,7 +32,8 @@ export const store = configureStore({
             ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
           },
         }),
-        filmsApi.middleware
+        filmsApi.middleware,
+        favoritesApi.middleware
 ]})
 
 export const persister = persistStore(store)
