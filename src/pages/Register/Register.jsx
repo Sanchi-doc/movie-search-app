@@ -47,7 +47,7 @@ export const Register = () => {
     <form className={styles.form} onSubmit={handleSubmit}>
     <input className={styles.input} type='text' name = 'name' value = {name} onChange={handleInputChange} placeholder="name"/>
     <input className={styles.input} type='text' name = 'email' value = {email} onChange={handleInputChange} placeholder="email"/>
-    <input className={styles.input} type='text' name = 'password' value = {password} onChange={handleInputChange} placeholder="password"/>
+    <input className={styles.input} type='password' name = 'password' value = {password} onChange={handleInputChange} placeholder="password"/>
     <button type='submit'>
         register
     </button>

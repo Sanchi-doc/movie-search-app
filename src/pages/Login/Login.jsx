@@ -1,13 +1,17 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import {login} from "../../redux/auth/authOperation"
+import { TbEye } from "react-icons/tb";
+import { TbEyeClosed } from "react-icons/tb";
 import styles from './login.module.css'
 export const Login = () => {
     const[email, setEmail] = useState('')
     const[password, setPassword] = useState('')
+    const[isShowPass, setShowPass] = useState(false) 
      
-     
-    
+    const handleShowPass = () => {
+        setShowPass(!isShowPass)
+    }
     
     const handleInputChange = (event) => {
         const{name, value} = event.target
@@ -33,8 +37,11 @@ export const Login = () => {
     
     return <>
     <form className={styles.form} onSubmit={handleSubmit}>
-    <input className={styles.input} type='text' name='email' value = {email} onChange={handleInputChange} placeholder="Email"/>
-    <input  className={styles.input} type='text' name='password' value = {password} onChange={handleInputChange} placeholder="Password"/>
+    <input className={styles.input} type='text' name='email' value = {email} onChange={handleInputChange} placeholder="Email"/> 
+    <div className={styles.passwordWrap}>
+     <input  className={styles.input} type={isShowPass?'password':'text'} name='password' value = {password} onChange={handleInputChange} placeholder="Password"/>
+     <button className={styles.btn} type="button" onClick={handleShowPass}>{isShowPass?<TbEye/>:<TbEyeClosed/>}</button>
+    </div>
     <button type='submit'>
         login
     </button>
