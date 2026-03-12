@@ -7,6 +7,7 @@ import { useAddFavoritesMutation } from '../../redux/films/favoriteOperations'
 import { useGetFavoritesQuery } from '../../redux/films/favoriteOperations'
 import { useDeleteFavoritesMutation} from '../../redux/films/favoriteOperations'
 import { useState, useEffect } from 'react'
+import { toast } from 'react-toastify'
 import styles from './details.module.css'
 export const Details = () => {
   const {id} = useParams()
@@ -28,15 +29,18 @@ export const Details = () => {
   const handleOnClick = () => {
     
     const favFilm = getFilm?.results.find( item => item.id == Number(id))
+    
 
     if (favFilm){
       delFilm(favFilm?._id)
       setFavorite(false)
+      toast.error(`${favFilm?.title} removed from favorite`)
     }
 
     if(!favFilm) {
       addFilm({id: film?.id, title: film?.title, poster_path: film?.poster_path, release_date: film?.release_date, vote_average: film?.vote_average})
       setFavorite(true)
+      toast.success(`${film?.title} add to favorite`)
     }
   }
 
