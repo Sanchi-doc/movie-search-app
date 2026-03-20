@@ -5,6 +5,7 @@ import {Login} from './pages/Login/Login'
 import {Register} from './pages/Register/Register'
 import {Review} from './pages/Review/Review'
 import {Trailers} from './pages/Trailers/Trailers'
+import { Comments } from './pages/Comments/Comments'
 import {Cast} from './pages/Cast/Cast'
 import {Movie} from './pages/Movie/Movie'
 import {Favorites} from './pages/Favorites/Favorites'
@@ -33,6 +34,7 @@ function App() {
     <Route path = 'cast' element = {<Cast/>}/>
     <Route path = 'review' element = {<Review/>}/>
     <Route path = 'trailers' element = {<Trailers/>}/>
+    <Route path='comments' element = {<Comments/>}/>
     </Route>
     </Route>
     </Routes>

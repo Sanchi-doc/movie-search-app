@@ -13,6 +13,11 @@
     "id": "3",
     "href": "review",
     "text": "Review"
+},
+{
+    "id": "4",
+    "href": "comments",
+    "text": "Comments"
 }
 
 ]

@@ -13,6 +13,7 @@ import {
 import storage from 'redux-persist/lib/storage'
 import { filmsApi } from "./films/filmOperations";
 import {favoritesApi} from './films/favoriteOperations'
+import { commentsApi } from "./comments/commentsOperation";
 
 const authPersistConfig = {
     key: 'auth',
@@ -24,7 +25,8 @@ export const store = configureStore({
     reducer: {
         [authSlice.name]: persistReducer(authPersistConfig, authSlice.reducer),
         [filmsApi.reducerPath]: filmsApi.reducer,
-        [favoritesApi.reducerPath]: favoritesApi.reducer
+        [favoritesApi.reducerPath]: favoritesApi.reducer,
+        [commentsApi.reducerPath]: commentsApi.reducer
     },
     middleware: getDefaultMiddleware => [
         ...getDefaultMiddleware({
@@ -33,7 +35,8 @@ export const store = configureStore({
           },
         }),
         filmsApi.middleware,
-        favoritesApi.middleware
+        favoritesApi.middleware,
+        commentsApi.middleware
 ]})
 
 export const persister = persistStore(store)
